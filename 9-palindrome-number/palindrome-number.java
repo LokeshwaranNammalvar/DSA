@@ -1,32 +1,23 @@
-class Solution {
-
-    private static boolean palidrome(String num)
-    {
-        int left = 0;
-        int right = num.length() - 1;
-        while(left < right)
-        {
-            if(num.charAt(left) != num.charAt(right))
-            {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
-    }
-
-
-
-
+class Solution 
+{
     public boolean isPalindrome(int x) 
     {
-        if(x < 0)
+        int value = x;
+        int reversed = 0;
+
+        while(x>0)
+        {
+            int digit = x%10;
+            reversed = reversed * 10 + digit;
+            x/=10;
+        }    
+        if(value==reversed)
+        {
+            return true;
+        }
+        else
         {
             return false;
         }
-        String num = x +"";
-        return palidrome(num);
     }
-    
 }
