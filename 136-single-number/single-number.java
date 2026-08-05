@@ -1,23 +1,22 @@
 class Solution 
 {
-    public int singleNumber(int[] arr) 
+    public int singleNumber(int[] nums) 
     {
-        int n=arr.length;
-        for(int i=0; i<n;i++)
+        for(int i=0; i<nums.length; i++)
         {
-            int count=0;
-            for(int j=0;j<n;j++)
+            int count = 0;
+            for(int j=0; j<nums.length; j++)
             {
-                if(arr[i]==arr[j])
+                if(nums[i]==nums[j])
                 {
                     count++;
                 }
             }
             if(count==1)
             {
-                return arr[i];
+                return nums[i];
             }
-        }
+        }    
         return -1;
     }
 }
