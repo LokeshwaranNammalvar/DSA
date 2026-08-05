@@ -2,26 +2,17 @@ class Solution
 {
     public int[] plusOne(int[] digits) 
     {
-        int n = digits.length;
-        int[] ans = new int[n];
-        for(int i=0; i<n; i++)    
+        for(int i=digits.length-1; i>=0; i--)
         {
-            ans[i] = digits[i];
-        }
-        for(int i=n-1; i>=0; i--)
-        {
-            ans[i]++;
-            if(ans[i]<10)
+            if(digits[i]<9)
             {
-                return ans;
+                digits[i]++;
+                return digits;
             }
-            else
-            {
-                ans[i]=0;
-            }
+            digits[i]=0;
         }
-        int[] result=new int[n+1];
-        result[0]=1;
-        return result;
+        int[] ans = new int[digits.length+1];
+        ans[0]=1;
+        return ans;
     }
 }
